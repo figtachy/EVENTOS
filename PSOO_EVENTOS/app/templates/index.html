@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Eventos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #e0f2e9; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Para manter o rodapé na parte inferior */
+        }
+        .navbar {
+            background-color: #4caf50; 
+        }
+        h1, p {
+            color: #fff;
+        }
+        .content {
+            background-color: #81c784; 
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #4caf50; 
+            color: #fff;
+            margin: 10px;
+            width: 100px; /* Tamanho fixo para os botões quadrados */
+            height: 100px; /* Tamanho fixo para os botões quadrados */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px; /* Borda arredondada */
+            text-decoration: none; /* Remove o sublinhado */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave */
+        }
+        .btn-custom:hover {
+            transform: scale(1.1) rotate(5deg); /* Aumenta e gira o botão no hover */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Sombras suaves */
+        }
+        .footer {
+            background-color: #4caf50; 
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Para empurrar o rodapé para o fundo */
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer .left {
+            max-width: 50%;
+        }
+        .footer .right {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .footer .social-icons i {
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .footer .social-icons i:hover {
+            color: #f1f1f1; /* Cor de hover */
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Sistema de Eventos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Página Inicial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da página -->
+    <div class="container mt-5">
+        <div class="content text-center">
+            <h1>Sistema de Gerenciamento de Eventos</h1>
+            <p>de um Campus Universitário</p>
+            <p>Seja Bem-vindo(a)!</p>
+        </div>
+
+        <!-- Botões para requisitos -->
+        <div class="d-flex flex-wrap justify-content-center">
+            <a href="/pessoa/" class="btn btn-custom">
+                Pessoa
+                <i class="fas fa-user icon"></i>
+            </a>
+            <a href="/atividade/" class="btn btn-custom">
+                Atividade
+                <i class="fas fa-calendar-alt icon"></i>
+            </a>
+            <a href="/evento/" class="btn btn-custom">
+                Evento
+                <i class="fas fa-clipboard-list icon"></i>
+            </a>
+            <a href="/local/" class="btn btn-custom">
+                Local
+                <i class="fas fa-map-marker-alt icon"></i>
+            </a>
+            <a href="/inscricao/" class="btn btn-custom">
+                Inscrição
+                <i class="fas fa-check-circle icon"></i>
+            </a>
+            <a href="/feedback/" class="btn btn-custom">
+                Feedback
+                <i class="fas fa-comments icon"></i>
+            </a>
+            <a href="/categoria/" class="btn btn-custom">
+                Categoria
+                <i class="fas fa-tags icon"></i>
+            </a>
+            <a href="/ocupacao/" class="btn btn-custom">
+                Ocupação
+                <i class="fas fa-briefcase icon"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Coluna esquerda com 3 linhas de texto -->
+            <div class="left">
+                <p>tassi figueiredo</p>
+                <p>&copy; Eventos 2024</p>
+            </div>
+
+            <!-- Coluna direita com ícones sociais -->
+            <div class="right">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank" class="text-white">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="text-white">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" class="text-white">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

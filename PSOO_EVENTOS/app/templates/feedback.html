@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - {{ evento.descricao }}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Feedback para o evento: {{ evento.descricao }}</h1>
+        
+        <!-- Exibe os feedbacks já cadastrados -->
+        <div class="mt-4">
+            <h3>Comentários:</h3>
+            {% for feedback in feedbacks %}
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ feedback.nome }}</h5>
+                        <p class="card-text">{{ feedback.comentario }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Não há comentários ainda.</p>
+            {% endfor %}
+        </div>
+
+        <!-- Formulário para adicionar novo feedback -->
+        <h3 class="mt-4">Deixe seu comentário:</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="comentario">Comentário:</label>
+                <textarea class="form-control" id="comentario" name="comentario" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Comentário</button>
+        </form>
+    </div>
+</body>
+</html>

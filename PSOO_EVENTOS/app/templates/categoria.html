@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - Sistema de Gerenciamento de Eventos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e0f2e9;
+        }
+        .content {
+            background-color: #81c784;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="content">
+            <h1 class="text-center">Categorias</h1>
+            <table class="table table-sm table-bordered" style="background-color: #3498db;">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if categorias %}
+                        {% for categoria in categorias %}
+                            <tr>
+                                <td>{{ categoria.id }}</td>
+                                <td>{{ categoria.nome }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="2" class="text-center">Nenhuma categoria encontrada.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
