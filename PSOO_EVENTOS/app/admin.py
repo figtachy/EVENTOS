@@ -27,9 +27,6 @@ class LocalAdmin(admin.ModelAdmin):
     list_display = ['id', 'nome', 'referencia']
     search_fields = ['nome']
 
-class OcupacaoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'nome', 'setor']
-    search_fields = ['nome', 'setor']
 
 class EventoAdmin(admin.ModelAdmin):
     list_display = ['id', 'descricao', 'data_inicio', 'hora_inicio', 'data_fim', 'hora_fim', 'local', 'categoria']
@@ -46,11 +43,9 @@ class CategoriaAdmin(admin.ModelAdmin):
     list_display = ['id', 'nome']
     search_fields = ['nome']
 
-admin.site.register(Pessoa)
 admin.site.register(Atividade)
 admin.site.register(Inscricao)
 admin.site.register(Local)
-admin.site.register(Ocupacao)
 admin.site.register(Evento)
 admin.site.register(Feedback)
 admin.site.register(Categoria)
